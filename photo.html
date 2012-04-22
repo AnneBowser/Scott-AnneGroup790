@@ -1,0 +1,48 @@
+<!doctype html>
+
+<html>
+
+    <head> 
+
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /> 
+
+		<title>Scott & Anne's Photo App</title>	
+		<script src="jquery.js"></script>
+		<style>
+			div {
+				padding: 10px;
+				border-style: solid;
+				border-color: gray;
+				border-width: 1px;
+			}
+		</style>
+
+    </head>	
+
+    <body>
+	<div style="width: 800px; margin: auto; padding: 0px;">
+		<div style="background-color: #ffcc66">
+		    <label for="galleryId" style="font-weight: bold">Flickry Gallery ID: </label><input type="text" name="galleryId" id="galleryId" value="6995023-72157622494466225" />
+		    <button id="loadGallery">Load Gallery</button>
+		</div>
+		<div id="gallery">
+		    <img id="mainImage" src="" style="width: 500px; height: 500px; float:left"/><br />
+		    <div style="clear:both; border: none"></div>
+		</div>
+		<div style="background-color: black">
+			<button id="previous">Previous</button><button id="next">Next</button>
+		</div>
+		<script src="flickrImages.js"></script>
+		<script>
+		$(document).ready(function(){
+			$("#previous").click(function() {
+			$("img").fadeIn();
+			$("#gallery").slideUp("slow");
+			$("#gallery").slideDown("slow");
+			});
+		});
+		</script>
+	</div>
+    </body>
+
+</html>
